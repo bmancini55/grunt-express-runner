@@ -2,6 +2,8 @@
 
 > Simple express server runner
 
+This task mimics running express by from the command line `node server.js` or `DEBUG=app* server.js`. It supports [debug](https://github.com/visionmedia/debug) environment variables to output debug statements. 
+
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
 
@@ -20,64 +22,41 @@ grunt.loadNpmTasks('grunt-express-runner');
 ## The "express_runner" task
 
 ### Overview
-In your project's Gruntfile, add a section named `express_runner` to the data object passed into `grunt.initConfig()`.
+
+In your project's Gruntfile, add a section named `expressrunner` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  express_runner: {
+  expressrunner: {
     options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
+      script: 'src/server.js',
+      debug: 'app*'
+    }
   },
 });
 ```
 
 ### Options
 
-#### options.separator
+#### options.script (Required)
 Type: `String`
-Default value: `',  '`
 
-A string value that is used to do something with whatever.
+The path to the express server start-up file.
 
-#### options.punctuation
+#### options.debug
 Type: `String`
-Default value: `'.'`
 
-A string value that is used to do something else with whatever else.
+Environment variable value for use with the [debug](https://github.com/visionmedia/debug) module.
 
 ### Usage Examples
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
 ```js
 grunt.initConfig({
-  express_runner: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  express_runner: {
+  expressrunner: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+      server: 'src/server.js',
+      debug: 'server*'
+    }
   },
 });
 ```
@@ -86,4 +65,4 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+0.1.0 Initial release
