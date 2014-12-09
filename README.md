@@ -2,7 +2,7 @@
 
 > Simple express server runner
 
-This task mimics running express by from the command line `node server.js` or `DEBUG=app* server.js`. It supports [debug](https://github.com/visionmedia/debug) environment variables to output debug statements. 
+This task mimics running Express via the command line: `node server.js` or `DEBUG=app* server.js`. It supports [debug](https://github.com/visionmedia/debug) environment variables output.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
@@ -47,19 +47,6 @@ The path to the express server start-up file.
 Type: `String`
 
 Environment variable value for use with the [debug](https://github.com/visionmedia/debug) module.
-
-### Usage Examples
-
-```js
-grunt.initConfig({
-  expressrunner: {
-    options: {
-      server: 'src/server.js',
-      debug: 'server*'
-    }
-  },
-});
-```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
