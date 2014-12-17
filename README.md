@@ -19,7 +19,7 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-express-runner');
 ```
 
-## The "express_runner" task
+## The "expressrunner" task
 
 ### Overview
 
