@@ -52,4 +52,5 @@ Environment variable value for use with the [debug](https://github.com/visionmed
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+0.2.0 Updates for new released version
 0.1.0 Initial release
