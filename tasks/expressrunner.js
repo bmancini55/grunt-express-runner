@@ -33,17 +33,9 @@ module.exports = function(grunt) {
     }
 
     // load the script to start express    
-    grunt.log.writeln('').writeln('Starting: ' + script.cyan);
-    self.spawned = grunt.util.spawn({
-        cmd: 'node',
-        args: [ script ],                
-        opts: {
-          env: process.env,
-          stdio: 'inherit',
-        }        
-      }, function(err, res, code) {        
-          grunt.log.warn('Express exit code: ' + code);
-      });
+    grunt.log.writeln('');
+    grunt.log.ok('Starting: ' + script.cyan);
+    require(script);
 
   });
 

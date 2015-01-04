@@ -50,7 +50,7 @@ Environment variable value for use with the [debug](https://github.com/visionmed
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-0.3.0 Modified process spawning technique to use grunt.util.spawn
+0.2.1 Added output statement for script path
 
 0.2.0 Updates for new released version
 
