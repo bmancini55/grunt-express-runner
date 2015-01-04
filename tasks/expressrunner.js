@@ -14,6 +14,7 @@ module.exports = function(grunt) {
 
     var options = this.options({})
       , path = require('path')
+      , self = this
       , script;
 
     // make task run async
@@ -31,8 +32,18 @@ module.exports = function(grunt) {
       return false;
     }
 
-    // load the script to start express
-    require(script);
+    // load the script to start express    
+    grunt.log.writeln('').writeln('Starting: ' + script.cyan);
+    self.spawned = grunt.util.spawn({
+        cmd: 'node',
+        args: [ script ],                
+        opts: {
+          env: process.env,
+          stdio: 'inherit',
+        }        
+      }, function(err, res, code) {        
+          grunt.log.warn('Express exit code: ' + code);
+      });
 
   });
 

@@ -2,19 +2,17 @@
 
 > Simple express server runner
 
-This task mimics running Express via the command line: `node server.js` or `DEBUG=app* server.js`. It supports [debug](https://github.com/visionmedia/debug) environment variables output.
+This task mimics running Express via the command line: `node server.js` or `DEBUG=app* server.js`. It supports [debug](https://github.com/visionmedia/debug) environment variables output. It fully support use with `grunt-contrib-watch` with the use of the `interrupt` option.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
 
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
 npm install grunt-express-runner --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
-
 ```js
 grunt.loadNpmTasks('grunt-express-runner');
 ```
@@ -52,5 +50,8 @@ Environment variable value for use with the [debug](https://github.com/visionmed
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+0.3.0 Modified process spawning technique to use grunt.util.spawn
+
 0.2.0 Updates for new released version
+
 0.1.0 Initial release
